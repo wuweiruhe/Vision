@@ -77,8 +77,8 @@ namespace Vision_NBB.Views.Controls
                     result.OutY = moduResult.GetOutputFloat("outY").pFloatVal[0];
                     result.OutR = moduResult.GetOutputFloat("outR").pFloatVal[0];
                     //result.NgResultString = moduResult.GetOutputString("NgResultString").astStringVal[0].strValue;
-                    result.Vdistance = moduResult.GetOutputFloat("Vdistance").pFloatVal[0];
-                    result.Hdistance = moduResult.GetOutputFloat("Hdistance").pFloatVal[0];
+                    //result.Vdistance = moduResult.GetOutputFloat("Vdistance").pFloatVal[0];
+                    //result.Hdistance = moduResult.GetOutputFloat("Hdistance").pFloatVal[0];
                     result.CameraResult = moduResult.GetOutputInt("CameraResult").pIntVal[0];
                     #endregion
                 }
@@ -120,9 +120,10 @@ namespace Vision_NBB.Views.Controls
                 AddResultText("R", result.OutR);
 
                 AddResultText("ResultType", result.CameraResult);
+
                 //AddResultText("NG说明", result.NgResultString);
-                //AddResultText("竖直间距", result.Vdistance);
-                //AddResultText("水平间距", result.Hdistance);           
+                AddResultText("竖直间距", result.Vdistance);
+                AddResultText("水平间距", result.Hdistance);
                 FileHelper.WriteText(src_path + "\\content.txt", sb.ToString());
 
                 #endregion

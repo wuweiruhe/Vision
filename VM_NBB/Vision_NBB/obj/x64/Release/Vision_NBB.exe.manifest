@@ -295,6 +295,30 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccessCompolet.dll" size="53248">
+      <assemblyIdentity name="DataAccessCompolet" version="1.8.0.0" publicKeyToken="F3505D5782C23C5D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>oRLTrybew8oud0Scuw1ix44Gm+HEn9YNCbMdfbbS3nc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ja\DataAccessCompolet.resources.dll" size="5120">
+      <assemblyIdentity name="DataAccessCompolet.resources" version="1.8.0.0" publicKeyToken="F3505D5782C23C5D" language="ja" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>QT4aFF5ASyKEIy/ccJBjFXoQRrTJaw7DGU7DK2iawTE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FgwDotnet.dll" size="94208">
       <assemblyIdentity name="FgwDotnet" version="1.0.0.5" publicKeyToken="E010E60D6DEEB244" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -507,6 +531,30 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>aypVFT964DKKb7M1MeUiCbtRmp+DWO+umtFcFZ0XqEM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SysmacGatewayCompolet.dll" size="73728">
+      <assemblyIdentity name="SysmacGatewayCompolet" version="1.8.0.0" publicKeyToken="F3505D5782C23C5D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MbxFlkx3KU0WbneGQVpsRFJTaf6m03PCxlYmHn7EIsY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ja\SysmacGatewayCompolet.resources.dll" size="6656">
+      <assemblyIdentity name="SysmacGatewayCompolet.resources" version="1.8.0.0" publicKeyToken="F3505D5782C23C5D" language="ja" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>YKtRxUClNDYdfH7vNArZ2lvaV4P/NNoLjihWEszPRzk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1735,14 +1783,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vision_NBB.exe" size="628704">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VariableCompolet.dll" size="229376">
+      <assemblyIdentity name="VariableCompolet" version="1.8.0.0" publicKeyToken="F3505D5782C23C5D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>bwivCZRwV4gYSA3aKRdEzvNLwBg7LZZu/D2Ya7torDI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ja\VariableCompolet.resources.dll" size="36864">
+      <assemblyIdentity name="VariableCompolet.resources" version="1.8.0.0" publicKeyToken="F3505D5782C23C5D" language="ja" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SpOPpJfnsUoGTDmhRMbQEME7RzpA+I9VcpVNBW26+3Y=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vision_NBB.exe" size="629216">
       <assemblyIdentity name="Vision_NBB" version="1.2.0.4" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IvISIQCpQfOnuHY4Ho345EyevrTN7syG3zfg03Y+AiE=</dsig:DigestValue>
+        <dsig:DigestValue>JVGE4jDhjTsNfGV7CIJt/j1ifq94P02Dc8c8EaiGW3s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

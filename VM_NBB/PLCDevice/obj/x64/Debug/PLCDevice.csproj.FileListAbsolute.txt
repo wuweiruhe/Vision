@@ -1,2 +1,0 @@
-D:\SOFTWARE\HK\VM_NBB\PLCDevice\obj\x64\Debug\PLCDevice.csproj.AssemblyReference.cache
-D:\SOFTWARE\HK\VM_NBB\PLCDevice\obj\x64\Debug\PLCDevice.csproj.CoreCompileInputs.cache
