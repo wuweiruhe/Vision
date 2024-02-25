@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CalibInfo>
+    <CalibInputParam>
+        <CalibParam ParamName="CreateCalibTime" DataType="string">
+            <ParamValue>2023-08-21 05:09:36</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="CalibType" DataType="string">
+            <ParamValue>NPointCalib</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="CameraMode" DataType="int">
+            <ParamValue>CameraStatic</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="TransNum" DataType="int">
+            <ParamValue>9</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="RotNum" DataType="int">
+            <ParamValue>3</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="CalibErrStatus" DataType="int">
+            <ParamValue>0</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="TransError" DataType="float">
+            <ParamValue>1.0372447</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="RotError" DataType="float">
+            <ParamValue>0.17947899</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="TransWorldError" DataType="float">
+            <ParamValue>0.06804654</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="RotWorldError" DataType="float">
+            <ParamValue>0.011774391</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="PixelPrecisionX" DataType="float">
+            <ParamValue>0.065753788</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="PixelPrecisionY" DataType="float">
+            <ParamValue>0.065452583</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="PixelPrecision" DataType="float">
+            <ParamValue>0.065603174</ParamValue>
+        </CalibParam>
+        <CalibPointFListParam ParamName="ImagePointLst" DataType="CalibPointList">
+            <PointF>
+                <X>2264.9739</X>
+                <Y>1376.4281</Y>
+                <R>89.710609</R>
+            </PointF>
+            <PointF>
+                <X>2037.1526</X>
+                <Y>1377.5254</Y>
+                <R>89.734772</R>
+            </PointF>
+            <PointF>
+                <X>1809.1039</X>
+                <Y>1379.0828</Y>
+                <R>89.783577</R>
+            </PointF>
+            <PointF>
+                <X>1810.6884</X>
+                <Y>1607.4152</Y>
+                <R>89.796074</R>
+            </PointF>
+            <PointF>
+                <X>2038.5854</X>
+                <Y>1606.1188</Y>
+                <R>89.819</R>
+            </PointF>
+            <PointF>
+                <X>2266.8569</X>
+                <Y>1602.0751</Y>
+                <R>89.792786</R>
+            </PointF>
+            <PointF>
+                <X>2269.26</X>
+                <Y>1838.3254</Y>
+                <R>89.981079</R>
+            </PointF>
+            <PointF>
+                <X>2041.136</X>
+                <Y>1835.8638</Y>
+                <R>89.955185</R>
+            </PointF>
+            <PointF>
+                <X>1813.0204</X>
+                <Y>1837.3521</Y>
+                <R>89.976959</R>
+            </PointF>
+            <PointF>
+                <X>2202.041</X>
+                <Y>1617.223</Y>
+                <R>100.00203</R>
+            </PointF>
+            <PointF>
+                <X>2039.9169</X>
+                <Y>1607.571</Y>
+                <R>90.043274</R>
+            </PointF>
+            <PointF>
+                <X>1879.3524</X>
+                <Y>1625.7926</Y>
+                <R>80.114113</R>
+            </PointF>
+        </CalibPointFListParam>
+        <CalibPointFListParam ParamName="WorldPointLst" DataType="CalibPointList">
+            <PointF>
+                <X>255.61</X>
+                <Y>-332.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>255.61</X>
+                <Y>-317.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>255.61</X>
+                <Y>-302.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>270.60999</X>
+                <Y>-302.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>270.60999</X>
+                <Y>-317.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>270.60999</X>
+                <Y>-332.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>285.60999</X>
+                <Y>-332.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>285.60999</X>
+                <Y>-317.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>285.60999</X>
+                <Y>-302.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>270.60999</X>
+                <Y>-317.44</Y>
+                <R>-8.7700005</R>
+            </PointF>
+            <PointF>
+                <X>270.60999</X>
+                <Y>-317.44</Y>
+                <R>1.23</R>
+            </PointF>
+            <PointF>
+                <X>270.60999</X>
+                <Y>-317.44</Y>
+                <R>11.23</R>
+            </PointF>
+        </CalibPointFListParam>
+    </CalibInputParam>
+    <CalibOutputParam>
+        <CalibParam ParamName="RotDirectionState" DataType="int">
+            <ParamValue>-1</ParamValue>
+        </CalibParam>
+        <CalibParam ParamName="IsRightCoorA" DataType="int">
+            <ParamValue>1</ParamValue>
+        </CalibParam>
+        <PointF ParamName="RotCenterImagePoint" DataType="CalibPointF">
+            <RotCenterImagePointX>2067.1753</RotCenterImagePointX>
+            <RotCenterImagePointY>2541.2629</RotCenterImagePointY>
+            <RotCenterImageR>-999</RotCenterImageR>
+        </PointF>
+        <PointF ParamName="RotCenterWorldPoint" DataType="CalibPointF">
+            <RotCenterWorldPointX>167.20869</RotCenterWorldPointX>
+            <RotCenterWorldPointY>-134.46953</RotCenterWorldPointY>
+            <RotCenterWorldR>-999</RotCenterWorldR>
+        </PointF>
+        <CalibFloatListParam ParamName="CalibMatrix" DataType="FloatList">
+            <ParamValue>0.00042706126</ParamValue>
+            <ParamValue>0.065450087</ParamValue>
+            <ParamValue>-167.20869</ParamValue>
+            <ParamValue>-0.065752402</ParamValue>
+            <ParamValue>0.00057145517</ParamValue>
+            <ParamValue>134.46953</ParamValue>
+            <ParamValue>0</ParamValue>
+            <ParamValue>0</ParamValue>
+            <ParamValue>1</ParamValue>
+        </CalibFloatListParam>
+    </CalibOutputParam>
+</CalibInfo>

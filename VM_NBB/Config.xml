@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <cameraSettings>
+        <ImagePath>D:\</ImagePath>
+        <OkImageSave>false</OkImageSave>
+        <IsSaveRenderImageOnly>false</IsSaveRenderImageOnly>
+        <IsForceSaveOK>false</IsForceSaveOK>
+        <NGImageSave>false</NGImageSave>
+        <MaxSaveDays>60</MaxSaveDays>
+        <TriggerMode>1</TriggerMode>
+    </cameraSettings>
+    <workFlowSorts>
+        <camera1_NO>1</camera1_NO>
+        <camera2_NO>2</camera2_NO>
+        <camera3_NO>3</camera3_NO>
+        <camera4_NO>4</camera4_NO>
+        <camera1_Sequence>{0,4,5,136,137,107,108,109,110,9,10,11,12,167,18}</camera1_Sequence>
+        <camera2_Sequence>{1,13,14,20,34,77}</camera2_Sequence>
+        <camera3_Sequence>{2,242,290,329,1,29,9999,277,316,13,28},{42,218,14,25,36,147,20,15}</camera3_Sequence>
+        <camera4_Sequence>{3,22,221,21,45,227,248,31,46},{64,188,32,30,76,190,34,37}</camera4_Sequence>
+    </workFlowSorts>
+    <nPointCalibParam>
+        <CalibOrigin>0</CalibOrigin>
+        <BasePointX>251.77</BasePointX>
+        <BasePointY>-328.66</BasePointY>
+        <BaseAngle>0.86</BaseAngle>
+        <TrigCts>0</TrigCts>
+        <MoveAngle>10</MoveAngle>
+        <MoveAlignY>15</MoveAlignY>
+        <MoveAlignX>15</MoveAlignX>
+        <RotPointTotalNum>3</RotPointTotalNum>
+        <CalibPointTotalNum>9</CalibPointTotalNum>
+    </nPointCalibParam>
+    <SoluctionPath>C:\Users\tuyan\Desktop\img\A测_24BB - 副本.sol</SoluctionPath>
+    <SoluctionName>C:\Users\tuyan\Desktop\img\A测_24BB - 副本.sol</SoluctionName>
+    <PLC_IP>192.168.6.1</PLC_IP>
+    <PLC_Port>2</PLC_Port>
+    <LoginUserName>Admin</LoginUserName>
+</Configuration>

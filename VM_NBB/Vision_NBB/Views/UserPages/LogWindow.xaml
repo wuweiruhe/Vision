@@ -1,0 +1,41 @@
+﻿<Window x:Class="Vision_NBB.Views.UserPages.LogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vision_NBB.Views.UserPages"
+        mc:Ignorable="d"
+        Title="Log" Height="500" Width="600"  WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" BorderThickness="1" ResizeMode="NoResize" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition  Height="5*"/>
+                <RowDefinition  Height="94*"/>
+            </Grid.RowDefinitions>
+            <Border Background="#FFF86706"/>
+            <DockPanel Grid.Row="1" Background="#FF3C3B3B"  LastChildFill="False">
+                <Label DockPanel.Dock="Left" Content="日志"  Style="{StaticResource ResourceKey=title_label}"/>
+                <Button DockPanel.Dock="Right"  Content="X" Margin="0,0,10,0" Style="{StaticResource title_btn}"   
+                        BorderThickness="0"  Click="Btn_close_Click" Width="16" />
+            </DockPanel>
+            <ListView  x:Name="lsv_log" Width="auto" Height="Auto" Grid.Row="2"    Background="#FFE8E7E6"  
+                       Margin="20" FontWeight="Bold" 
+                       ItemContainerStyle="{StaticResource ListViewItemStyle}" ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                       ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                <ListView.View>
+                    <GridView >
+                        <GridViewColumn Header="时间"  Width="150" DisplayMemberBinding="{Binding Time}"  ></GridViewColumn>
+                        <GridViewColumn Header="类型" Width="100" DisplayMemberBinding="{Binding Level}"></GridViewColumn>
+                        <GridViewColumn Header="事件" Width="300" DisplayMemberBinding="{Binding Content}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </Grid>
+</Window>

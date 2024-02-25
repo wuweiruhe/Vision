@@ -1,0 +1,5 @@
+camera1_IsForceSave=false
+camera2_IsForceSave=false
+camera3_IsForceSave=true
+camera4_IsForceSave=true
+

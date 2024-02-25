@@ -1,0 +1,379 @@
+﻿<Window x:Class="Vision_NBB.Views.Pages.CameraSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vision_NBB.Views.Pages" 
+        xmlns:Controls="clr-namespace:Vision_NBB.Controls"
+        xmlns:loc="clr-namespace:Vision_NBB.Converter"
+        mc:Ignorable="d"
+        Title="CameraSetting" Height="800" Width="880"  WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" BorderThickness="1" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        ResizeMode="NoResize" Loaded="Window_Loaded" >
+
+    <Window.Resources>
+        <loc:RadioBoolToIntConverter x:Key="RadioBoolToIntConverter"/>
+        <!--<loc:RadioBoolToIntConverter x:Key="RadioBoolToIntConverter"/>-->
+    </Window.Resources>
+    <Grid>
+        <Grid  Background="#FFF3F3F3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition  Height="3*"/>
+                <RowDefinition  Height="70*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+            <Border Background="#FFF86706"/>
+            <!--顶部提示栏+关闭按钮-->
+            <DockPanel Grid.Row="1" Background="#FF3C3B3B"  LastChildFill="False">
+                <Label DockPanel.Dock="Left" Content="相机设置"  Style="{StaticResource ResourceKey=title_label}"/>
+                <Button DockPanel.Dock="Right"  Content="X" Margin="0,0,10,0" Style="{StaticResource title_btn}"   
+                        BorderThickness="0" Click="Btn_close_Click" Width="16" />
+            </DockPanel>
+
+
+            <StackPanel   Grid.Row="2" Orientation="Vertical" Margin="20">
+                <StackPanel  Orientation="Horizontal">
+                    <Label Content="图片路径"    Width="100" VerticalAlignment="Center"  HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" FontSize="15"  Height="48" />
+                    <Controls:TextBoxExtPic  x:Name="cellPath" Height="30" Width="605" Margin="0,3,3,3"  Folder="{Binding cameraSettings.ImagePath, Mode=TwoWay}" />
+                </StackPanel>
+
+
+
+                <StackPanel Orientation="Horizontal" Margin="20,20,10,10" >
+                    <CheckBox Content="OK 图像保存" x:Name="check_save_image" HorizontalAlignment="Left" Margin="0"   
+                              Width="112"   IsChecked="{Binding cameraSettings.OkImageSave }"/>
+                    <CheckBox Content="NG 图像保存" x:Name="check_save_ng" HorizontalAlignment="Left" 
+                              Margin="28,0,0,0"     IsChecked="{Binding cameraSettings.NGImageSave}" />
+
+                    <CheckBox Content="是否强制保存OK( 只针对相机3 和 相机4 )"  HorizontalAlignment="Left" 
+                              Margin="28,0,0,0"     IsChecked="{Binding cameraSettings.IsForceSaveOK}" />
+
+
+                    <CheckBox Content="只保存渲染图( 只针对相机3 和 相机4 )" HorizontalAlignment="Left" 
+                              Margin="28,0,0,0"     IsChecked="{Binding cameraSettings.IsSaveRenderImageOnly}" />
+
+                </StackPanel>
+
+                <StackPanel Margin="15,20,10,10">
+                    <!--<GroupBox Header="相机触发模式" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="Auto"  MinWidth="300" Margin="10,10,0,0">-->
+
+                    <StackPanel Orientation="Horizontal">
+                        <!--<RadioButton HorizontalAlignment="Left"   Content="相机硬触发" x:Name="Rdo_Auto"   Margin="5" IsChecked="{Binding Path=cameraSettings.TriggerMode, Converter={StaticResource RadioBoolToIntConverter}, ConverterParameter=1}" Click="Rdo_Auto_Click" Checked="Rdo_Auto_Checked"   />
+                        <RadioButton HorizontalAlignment="Right" Content="相机软触发" x:Name="Rdo_Manual" Margin="30,5,5,5"   IsChecked="{Binding Path=cameraSettings.TriggerMode, Converter={StaticResource RadioBoolToIntConverter}, ConverterParameter=7}" Click="Rdo_Manual_Click" />-->
+                    </StackPanel>
+
+                    <!--</GroupBox>-->
+
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <Label DockPanel.Dock="Left" Content="最大保存天数"  MinWidth="90" 
+                           Style="{StaticResource MessageLabe_text}"  Margin="15,0,0,0"/>
+                    <TextBox x:Name="max_save_day"   Margin="5,0,0,0"  BorderThickness="1" 
+                             BorderBrush="Orange"   Height="23"  Width="100"  
+                             Style="{StaticResource txtboxMesage2}" Text="{Binding cameraSettings.MaxSaveDays}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Button Grid.Row="3" Width="150" Height="50" Content="保存" x:Name="save"  Style="{StaticResource buttonType1}"
+                    Click="Save_Click" Margin="364,85,364,35" />
+
+            <TabControl HorizontalAlignment="Left" Height="375" 
+                        Margin="20,281,0,0" Grid.Row="2" VerticalAlignment="Top" Width="800"  
+                        TabStripPlacement="Left" x:Name="tab" Grid.RowSpan="2">
+                <TabItem Header="机械手相机">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25*"/>
+                            <RowDefinition  Height="25*"/>
+                            <RowDefinition  Height="25*"/>
+                            <RowDefinition  Height="3*"/>
+                            <RowDefinition  Height="25*"/>
+                            <RowDefinition  Height="3*"/>
+                            <RowDefinition Height="58*"/>
+                        </Grid.RowDefinitions>
+
+
+
+                        <StackPanel Orientation="Horizontal" Margin="5"  >
+                            <Label Content="机械手治具基 X"  MinWidth="111" FontSize="12" Margin="2,0,0,0" VerticalAlignment="Center"/>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.RobotBaseX}"  />
+
+
+                            <Label Content="-----"  MinWidth="20" FontSize="12" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                            <Label Content="机械手治具基 X 最小值 "  MinWidth="111" FontSize="12" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.RobotPosMinX}"  />
+
+                            <Label Content="机械手治具基 X 最大值 "  MinWidth="111" FontSize="12" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.RobotPosMaxX}"  />
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal" Margin="5"  Grid.Row="1" >
+                            <Label Content="机械手治具基 Y"  MinWidth="111" FontSize="12" Margin="2,0,0,0" VerticalAlignment="Center"/>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.RobotBaseY}"  />
+
+
+                            <Label Content="-----"  MinWidth="20" FontSize="12" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                            <Label Content="机械手治具基 Y 最小值 "  MinWidth="111" FontSize="12" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.RobotPosMinY}"  />
+
+                            <Label Content="机械手治具基 Y 最大值 "  MinWidth="111" FontSize="12" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.RobotPosMaxY}"  />
+                        </StackPanel>
+
+
+
+                        <StackPanel Orientation="Horizontal" Margin="5"  Grid.Row="2" >
+                            <Label Content="机械手治具基 R"  MinWidth="111" FontSize="12" Margin="2,0,0,0" VerticalAlignment="Center"/>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.RobotBaseR}"  />
+
+
+                            <Label Content="-----"  MinWidth="20" FontSize="12" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                            <Label Content="机械手治具基 R 最小值 "  MinWidth="111" FontSize="12" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.RobotPosMinR}"  />
+
+                            <Label Content="机械手治具基 R 最大值 "  MinWidth="111" FontSize="12" Margin="12,0,0,0" VerticalAlignment="Center"/>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.RobotPosMaxR}"  />
+                        </StackPanel>
+
+
+
+
+                        <Label Height="2" Background="LightGray" Margin="30,0,30,0" Grid.Row="3"></Label>
+
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="4">
+
+                            <StackPanel Orientation="Horizontal" Margin="35,5,5,5">
+                                <Button  Content="设置示校标定参数" Style="{StaticResource BtnLink}"  x:Name="Btn_SetRobotCalibParams"  Margin="15,0,0,0"   Foreground="Blue" 
+                                     HorizontalAlignment="Right" VerticalAlignment="Center" Click="Btn_SetRobotCalibParams_Click"
+                                   ></Button>
+                            </StackPanel>
+                            <!--<Label Content="竖直边距最小值"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                            <TextBox    Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}"  Text="{Binding vmGlobalDataModel.VDistanceMin}" />
+                            <Label Content="竖直边距最大值"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                            <TextBox    Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange" Text="{Binding vmGlobalDataModel.VDistanceMax}" 
+                                        Height="20"  MinWidth="65"  Style="{StaticResource txtboxMesage2}" />
+
+
+
+                            <Label Content="水平边距最小值"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                            <TextBox    Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange" 
+                                        Height="20"  MinWidth="65"  Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.HDistanceMin}" ></TextBox>
+
+                            <Label Content="水平边距最大值"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                            <TextBox    Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}"  Text="{Binding vmGlobalDataModel.HDistanceMax}"/>-->
+
+                        </StackPanel>
+
+
+
+                        <Label Height="2" Background="LightGray" Margin="30,0,8,0"   Grid.Row="5" ></Label>
+
+
+                        <StackPanel Orientation="Horizontal" Margin="1" Grid.Row="6">
+
+
+
+                            <StackPanel Orientation="Vertical">
+
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <!--<Label  Content="机械手抓取偏移设置 Y"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                                    <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                                    Style="{StaticResource txtboxMesage2}"  Text="{Binding vmGlobalDataModel.TPointY}"  />-->
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <!--<Label  Content="机械手抓取偏移设置 R"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                                    <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.TPointR}"
+                                                    Style="{StaticResource txtboxMesage2}" />-->
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="机械手抓取偏移设置 X"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                                    <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Text="{Binding vmGlobalDataModel.TPointX}"
+                                                    Style="{StaticResource txtboxMesage2}" />
+
+                                    <StackPanel Orientation="Horizontal" Margin="5">
+                                        <Label  Content="     机械手抓取偏移设置 Y"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                                        <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                                    Style="{StaticResource txtboxMesage2}"  Text="{Binding vmGlobalDataModel.TPointY}"  />
+                                    </StackPanel>
+
+                                    <Label  Content="         机械手抓取偏移设置 R"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                                    <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Text="{Binding vmGlobalDataModel.TPointR}"
+                                                    Style="{StaticResource txtboxMesage2}" />
+                                </StackPanel>
+
+
+
+                            </StackPanel>
+
+
+                            <!--<StackPanel Orientation="Vertical" Margin="3,0,0,0" >
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="硅片示校位置X"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                                    <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65" 
+                                                    Style="{StaticResource txtboxMesage2}" />
+                                </StackPanel>
+
+
+
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label  Content="硅片示校位置Y"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                                    <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                                    Style="{StaticResource txtboxMesage2}" />
+                                </StackPanel>
+
+
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label  Content="硅片示校位置R"  MinWidth="111" Style="{StaticResource MessageLabe_text}" FontSize="12" Margin="2,0,0,0"/>
+                                    <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  Style="{StaticResource txtboxMesage2}" />
+                                </StackPanel>
+                            </StackPanel>-->
+
+
+
+                        </StackPanel>
+
+
+
+
+                    </Grid>
+                </TabItem>
+                <!--相机2-->
+                <TabItem Header="治具相机"  Visibility="Hidden">
+                    <!--<Grid>
+
+                        <StackPanel Orientation="Vertical">
+
+                            <StackPanel  Orientation="Horizontal" Margin="2" Width="650" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                                <Label Content="基准值 X" Style="{StaticResource MessageLabel}"  MinWidth="80"></Label>
+                                <TextBox Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.FixturePointX}" ></TextBox>
+
+                                <Label Content=" X偏移最小值" Style="{StaticResource MessageLabel}"  MinWidth="80" Margin="38,0,0,0"></Label>
+                                <TextBox Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.FixtureMinPointX}" ></TextBox>
+
+                                <Label Content=" X偏移最大值" Style="{StaticResource MessageLabel}"  MinWidth="80"></Label>
+                                <TextBox Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.FixtureMaxPointX}" ></TextBox>
+
+
+
+                            </StackPanel>
+
+                            <Label Height="2" Background="LightGray" Margin="30,0,30,0"></Label>
+                            <StackPanel  Orientation="Horizontal" Margin="2" Width="650" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                                <Label Content="基准值 Y" Style="{StaticResource MessageLabel}"  MinWidth="80"></Label>
+                                <TextBox Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.FixturePointY}" ></TextBox>
+
+                                <Label Content=" Y偏移最小值" Style="{StaticResource MessageLabel}"  MinWidth="80" Margin="38,0,0,0"></Label>
+                                <TextBox Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.FixtureMinPointY}" ></TextBox>
+
+                                <Label Content=" Y偏移最大值" Style="{StaticResource MessageLabel}"  MinWidth="80"></Label>
+                                <TextBox Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.FixtureMaxPointY}" ></TextBox>
+                            </StackPanel>
+
+                            <Label Height="2" Background="LightGray" Margin="30,0,30,0"></Label>
+
+                            <StackPanel  Orientation="Horizontal" Margin="2" Width="650" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                                <Label Content="基准值 R" Style="{StaticResource MessageLabel}"  MinWidth="80"></Label>
+                                <TextBox Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.FixturePointR}" ></TextBox>
+
+                                <Label Content=" R偏移最小值" Style="{StaticResource MessageLabel}"  MinWidth="80" Margin="38,0,0,0"></Label>
+                                <TextBox Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.FixtureMinPointR}" ></TextBox>
+
+                                <Label Content=" R偏移最大值" Style="{StaticResource MessageLabel}"  MinWidth="80"></Label>
+                                <TextBox Margin="2,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"  
+                                        Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.FixtureMaxPointR}" ></TextBox>
+
+
+
+                            </StackPanel>
+
+                        </StackPanel>
+
+
+
+                    </Grid>-->
+                </TabItem>
+
+                <!--相机3-->
+                <TabItem Header="上点胶相机">
+                    <Grid>
+                        <StackPanel  Orientation="Horizontal" Margin="2,2,0,0" Width="622" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                            <Label Content="焊带数" Style="{StaticResource MessageLabel}"  MinWidth="111"></Label>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.WeldingCount}"></TextBox>
+
+                            <Label Content="焊带间距" Style="{StaticResource MessageLabel}"  MinWidth="111"></Label>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.UpGapDistnce}"></TextBox>
+
+
+                            <Label Content="像素比例" Style="{StaticResource MessageLabel}"  MinWidth="111"></Label>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.UpGluePixel}"></TextBox>
+
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Ng初始坐标X" Style="{StaticResource MessageLabel}"  MinWidth="111"></Label>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.UpGlueNgPosX}"></TextBox>
+
+
+                            <Label Content="Ng初始坐标Y" Style="{StaticResource MessageLabel}"  MinWidth="111"></Label>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.UpGlueNgPosY}"></TextBox>
+
+                        </StackPanel>
+
+                    </Grid>
+                </TabItem>
+
+                <!--相机4-->
+                <TabItem Header="下点胶相机">
+                    <Grid>
+
+                        <StackPanel  Orientation="Horizontal" Margin="2" Width="500" Height="200" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                           
+
+                            <Label Content="焊带间距" Style="{StaticResource MessageLabel}"  MinWidth="111"></Label>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.BackGapDistnce}"></TextBox>
+
+                            <Label Content="像素比例" Style="{StaticResource MessageLabel}"  MinWidth="111"></Label>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.BackGluePixel}"></TextBox>
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Ng初始坐标X" Style="{StaticResource MessageLabel}"  MinWidth="111"></Label>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.DownGlueNgPosX}"></TextBox>
+
+
+                            <Label Content="Ng初始坐标Y" Style="{StaticResource MessageLabel}"  MinWidth="111"></Label>
+                            <TextBox    Margin="5,0,0,0"  BorderThickness="1" BorderBrush="Orange"   Height="20"  MinWidth="65"   Style="{StaticResource txtboxMesage2}" Text="{Binding vmGlobalDataModel.DownGlueNgPosY}"></TextBox>
+
+                        </StackPanel>
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,144 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vision_NBB.Views.Controls"
+             xmlns:local1="clr-namespace:Vision_NBB"
+             xmlns:local2="clr-namespace:Vision_NBB.Model"
+             x:Class="Vision_NBB.Views.Controls.Camera1"
+             mc:Ignorable="d"            
+             xmlns:vm="clr-namespace:VMControls.WPF.Release;assembly=VMControls.WPF.Release"          
+             d:DesignHeight="700" d:DesignWidth="1000"  BorderThickness="0" 
+             Background="#FF222222" Loaded="UserControl_Loaded">
+    <Grid Background="#FF222222">
+        <Grid Background="#FF222222"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="15*"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Grid  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel   Grid.ColumnSpan="2" Grid.Row="0"  Grid.Column="0"  Orientation="Horizontal" FlowDirection="LeftToRight"  >
+                    <Label Content="{Binding Ng_text }"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="70" Foreground="{Binding Ng_color}" Padding="0,0" Margin="20,0,0,0" Height="140" FontWeight="Bold" FontFamily="MS Reference Sans Serif"></Label>
+                    <Label  Content="{Binding TimeStatistic}"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Foreground="#FFF3EFEF" Margin="25,28,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                    <Label  Content="MS"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Foreground="#FFF3EFEF" Margin="5,28,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                </StackPanel>
+            </Grid>
+            <Button Grid.Column="2"></Button>
+            <Grid Grid.Column="2" Background="#FF222222" SnapsToDevicePixels="True"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33*"/>
+                    <ColumnDefinition Width="33*"/>
+                    <ColumnDefinition Width="33*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="28*"/>
+                    <RowDefinition Height="72*"/>
+                </Grid.RowDefinitions>
+                <local1:ButtonEx   x:Name="buttonExecuteOnce" Grid.Row="1"  Width="40" Height="40"  Icon="/Image/play_45px.png"  Margin="10,0,10,20"  ButtonType="Icon" Click="ButtonExecuteOnce_Click"  />
+                <local1:ButtonEx   x:Name="buttonContinuExecute" Grid.Row="1"   Grid.Column="1" Width="40" Height="40"  Icon="/Image/loop_left_rotation_45px.png"  Margin="10,0,10,20"  ButtonType="Icon" Click="ButtonContinuExecute_Click"  />
+                <local1:ButtonEx   x:Name="buttonStopExecute" Grid.Row="1"   Grid.Column="2" Width="40" Height="40"  Icon="/Image/stop_circled_45px.png"   Margin="10,0,10,20"  ButtonType="Icon" Click="ButtonStopExecute_Click"  />
+                <Label Grid.Column="0" Grid.Row="0" Content="执行一次"  Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+                <Label Grid.Column="1" Grid.Row="0" Content="连续执行"  Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+                <Label Grid.Column="2" Grid.Row="0" Content="暂停"  Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="88*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <DockPanel LastChildFill="true"  Grid.Row="0" >
+                    <vm:VmRenderControl x:Name="vm"></vm:VmRenderControl>
+                </DockPanel>
+
+                <StackPanel  Orientation="Vertical" Grid.Row="1">
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Label  Content="X："  Style="{StaticResource UI_Label}"  Margin="30,1,0,0"></Label>
+                        <Label  Content="{Binding Result1.OutX}"   Style="{StaticResource UI_showLabel}" ></Label>
+
+                        <Label  Content="("  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif"></Label>
+                        <Label  Content="{Binding VmGlobalData.RobotPosMinX}"  MinWidth="28"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                        <Label  Content="---"    HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                        <Label  Content="{Binding VmGlobalData.RobotPosMaxX}" MinWidth="28"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                        <Label  Content=")"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Label  Content="Y："     Style="{StaticResource UI_Label}"  Margin="30,2,0,0"></Label>
+                        <Label  Content="{Binding  Result1.OutY}" Style="{StaticResource UI_showLabel}" ></Label>
+
+                        <Label  Content="("  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif"></Label>
+                        <Label  Content="{Binding VmGlobalData.RobotPosMinY}"  MinWidth="28"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                        <Label  Content="---"    HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                        <Label  Content="{Binding VmGlobalData.RobotPosMaxY}" MinWidth="28"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                        <Label  Content=")"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Label  Content="R："     Style="{StaticResource UI_Label}"  Margin="30,2,0,0" ></Label>
+                        <Label  Content="{Binding  Result1.OutR}"    Style="{StaticResource UI_showLabel}" ></Label>
+
+                        <Label  Content="("  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif"></Label>
+                        <Label  Content="{Binding VmGlobalData.RobotPosMinR}"  MinWidth="28"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                        <Label  Content="---"    HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                        <Label  Content="{Binding VmGlobalData.RobotPosMaxR}" MinWidth="28"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif" ></Label>
+                        <Label  Content=")"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Foreground="#FF27B43A" Margin="5,0,0,0" FontWeight="Bold" FontFamily="MS Reference Sans Serif"></Label>
+                        <Button  Content="查看NG历史图片" Style="{StaticResource BtnLink}" Margin="225,0,0,0"  x:Name="Btn_NgHistroy" Foreground="LightBlue" 
+                             HorizontalAlignment="Right" Click="Btn_NgHistroy_Click" VerticalAlignment="Center"
+                             ></Button>
+                    </StackPanel>
+
+
+                </StackPanel>
+              
+            </Grid>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" MinHeight="200" >
+                <Label Height="25" Background="#FF575656"  Content="工作流"  Foreground="#FFF9F0F0" FontWeight="Bold"  HorizontalContentAlignment="Center"/>
+                <ScrollViewer   HorizontalScrollBarVisibility="Auto" Height="800"   Template="{StaticResource MyScrollViewer}"  VerticalScrollBarVisibility="Visible"  >
+                    <TreeView  Name="tvProperties"  Padding="0" Margin="0" BorderThickness="1" 
+                               Background="#FF2B2A2A" MouseDoubleClick="TvProperties_MouseDoubleClick"   >
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate DataType="{x:Type local2:ModelBlock}" ItemsSource="{Binding Path=Children}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image VerticalAlignment="Center" Source="{Binding Icon}" Width="19" Height="19" Margin="0"></Image>
+                                    <TextBlock Foreground="Azure" VerticalAlignment="Center" Text="{Binding id}" FontSize="15"/>
+                                    <TextBlock Text=" "/>
+                                    <TextBlock  Foreground="Azure"   VerticalAlignment="Center" Text="{Binding DisplayName}" FontSize="15"></TextBlock>
+
+                                    <Image Height="16" Width="16" Source="{Binding Path=NgIcons}" Margin="12,0,0,0"/>
+                                </StackPanel>
+                            </HierarchicalDataTemplate>
+
+                        </TreeView.ItemTemplate>
+
+                        <TreeView.ItemContainerStyle>
+                            <Style TargetType="TreeViewItem">
+                                <Setter Property="IsExpanded" Value="True"/>
+                         
+                            </Style>
+              
+                        </TreeView.ItemContainerStyle>
+                   
+
+
+                    </TreeView>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

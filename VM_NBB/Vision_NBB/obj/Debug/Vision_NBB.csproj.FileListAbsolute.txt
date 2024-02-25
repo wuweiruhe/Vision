@@ -1,0 +1,16 @@
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\bin\Debug\Vision_NBB.exe.config
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\bin\Debug\Vision_NBB.exe
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\bin\Debug\Vision_NBB.pdb
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB.csproj.AssemblyReference.cache
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB.csproj.SuggestedBindingRedirects.cache
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\MainWindow.g.cs
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\App.g.cs
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB_MarkupCompile.cache
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB_MarkupCompile.lref
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\MainWindow.baml
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB.g.resources
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB.Properties.Resources.resources
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB.csproj.GenerateResource.cache
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB.csproj.CoreCompileInputs.cache
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB.exe
+D:\SOFTWARE\HK\VM_NBB\Vision_NBB\obj\Debug\Vision_NBB.pdb

@@ -1,0 +1,51 @@
+﻿<Window x:Class="Vision_NBB.Views.UserPages.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vision_NBB.Views.UserPages"
+        mc:Ignorable="d"
+        Title="Login" Height="400" Width="600"  WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" BorderThickness="1" ResizeMode="NoResize"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid  Background="#FFF3F3F3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition  Height="6*"/>
+                <RowDefinition  Height="73*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="#FFF86706"/>
+            <DockPanel Grid.Row="1" Background="#FF3C3B3B"  LastChildFill="False">
+                <Label DockPanel.Dock="Left" Content="用户切换"  Style="{StaticResource ResourceKey=title_label}"/>
+                <Button DockPanel.Dock="Right"  Content="X" Margin="0,0,10,0" Style="{StaticResource title_btn}"   
+                        BorderThickness="0" Click="Btn_close_Click" Width="16" />
+            </DockPanel>
+
+
+            <StackPanel Grid.Row="2"  Margin="30,50,0,0">
+                <StackPanel Orientation="Horizontal"  Margin="0,0,0.4,15" >
+                    <Label DockPanel.Dock="Left" Content="用户名"  MinWidth="90" Style="{StaticResource MessageLabel}" Margin="120,30,0,30"/>
+                    <ComboBox Width="180" x:Name="cmb"  Margin="10,30,0,30" 
+                              VerticalContentAlignment="Center"  SelectedIndex="0"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,0.4,15" >
+                    <Label DockPanel.Dock="Left" Content="密码"  MinWidth="90"  Style="{StaticResource MessageLabel}" Margin="120,0,0,0"/>
+                    <PasswordBox  x:Name="txb_old"   Width="182" Height="30" BorderThickness="1" BorderBrush="Orange" Margin="10,0,0,0"  Style="{StaticResource txbpsw}"></PasswordBox>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel Background="#FFF7F4F4" Grid.Row="3" Orientation="Horizontal">
+                <Button Grid.Row="3" Height="35" Width="65" Content="登出" x:Name="login_out" Click="btn_login_out"  Margin="160,0,0,10" Style="{StaticResource buttonType1}"></Button>
+                <Button Height="35" Width="65" Content="登录" x:Name="btn_login" Click="Btn_login_Click"  Margin="120,0,0,10" Style="{StaticResource buttonType1}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

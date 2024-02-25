@@ -1,0 +1,16 @@
+﻿<Window x:Class="Vision_NBB.Views.Pages.ParamsConfigControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vision_NBB.Views.Pages" 
+        xmlns:vm2="clr-namespace:VMControls.WPF.Release;assembly=VMControls.WPF.Release"
+        mc:Ignorable="d" Name="mainWin"
+         Height="700" Width="1100" Closing="Window_Closing"
+        WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid>
+        <DockPanel LastChildFill="True" >
+            <vm2:VmParamsConfigWithRenderControl x:Name="config" Margin="10"/>
+        </DockPanel>
+    </Grid>
+</Window>
