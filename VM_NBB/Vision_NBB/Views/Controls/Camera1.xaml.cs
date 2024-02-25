@@ -136,6 +136,8 @@ namespace Vision_NBB.Views.Controls
                 outData[1] = result.OutY;
                 outData[2] = result.OutR;
                 outData[3] = result.CameraResult;
+                outData[3] = result.Vdistance;
+                outData[5] = result.Vdistance;
 
 #if !TestDebug
                 basePLC.WriteValue(PLCTagName.Robot_calib_Senddata, outData);
